@@ -18,6 +18,7 @@ public class PedidoTest {
 	@Test
 	public void atributosSaoPrivados() {
 		assertTrue(cPedido.getAttributes().parallelStream()
+				.filter(x -> !x.getName().startsWith("$"))
 				.allMatch(x -> x.isPrivate()));
 	}	
 	@Test

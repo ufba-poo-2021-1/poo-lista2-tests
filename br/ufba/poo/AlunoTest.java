@@ -29,6 +29,7 @@ public class AlunoTest {
 	public void atributosSaoPrivados() {
 		// cAluno.attributes().allMatch(x -> x.isPrivate())
 		assertTrue(cAluno.getAttributes().parallelStream()
+				.filter(x -> !x.getName().startsWith("$"))
 				.allMatch(x -> x.isPrivate()));
 	}
 	
